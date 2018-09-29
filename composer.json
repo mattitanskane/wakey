@@ -1,0 +1,44 @@
+{
+  "name": "webbimasa/wordpress",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress composer thing",
+  "homepage": "https://github.com/webbimasa",
+  "authors": [
+    {
+      "name": "Matti Tanskanen",
+      "email": "mattitapanitanskanen@gmail.com",
+      "homepage": "https://github.com/webbimasa"
+    }
+  ],
+  "keywords": [
+    "wordpress", "composer", "wp", "webbimasa"
+  ],
+  "repositories": [
+      {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+      }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "composer/installers": "v1.5.0",
+    "wpackagist-plugin/wp-smushit":"*",
+    "wpackagist-plugin/relevanssi":"*",
+    "wpackagist-plugin/wp-libre-form":"*",
+    "wpackagist-plugin/duplicate-post":"*",
+    "wpackagist-plugin/wordpress-seo":"*",
+    "wpackagist-plugin/polylang":"*"
+  },
+  "extra": {
+    "installer-paths": {
+      "wordpress/wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "wpackagist-plugin/relevanssi"
+      ],
+      "wordpress/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "wordpress/wp-content/themes/{$name}": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "wordpress"
+  }
+}
